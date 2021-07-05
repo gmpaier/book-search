@@ -1,10 +1,11 @@
 import React, { Component } from "react";
 import API from "../utils/API";
-import List from "../components/List"
+import List from "../components/SearchList"
 
 class Saved extends Component {
   state = {
-    books: []
+    books: [],
+    button: "Remove"
   };
 
   componentDidMount() {
@@ -27,6 +28,7 @@ class Saved extends Component {
         <List
         books={this.state.books}
         handleDelete={this.handleDelete}
+        button={this.state.button}
         />
       </div>
     )

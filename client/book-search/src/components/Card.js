@@ -1,29 +1,6 @@
 import React from "react";
-import DeleteBtn from "./DeleteBtn";
-import SaveBtn from "./SaveBtn";
 
 function Card(props) {
-  const myBtn = function (){
-    if (window.location.pathname === "/"){
-      return <SaveBtn
-                book={{
-                  title: props.title,
-                  authors: props.authors,
-                  about: props.about,
-                  image: props.image,
-                  link: props.link
-                }}
-                handleSave={props.handleSave}
-              />
-    }
-    else if (window.location.pathname === "/saved"){
-      return <DeleteBtn
-                id={props.id}
-                handleDelete={props.handleDelete}
-                />
-    }
-  }
-
   return(
     <div className="card mb-3" style={{"max-width": "540px"}}>
       <div className="row g-0">
@@ -36,7 +13,7 @@ function Card(props) {
             <p className="card-text"><small className="text-muted">By {props.authors}</small></p>
             <p className="card-text">{props.about}</p>
             <a href={props.link} className="d-inline card-link"><small className="text-muted">See on Google Books</small></a>
-            {myBtn}
+            <button className="btn btn-info save-btn" value={props.book} onClick={(event) => props.handleBtn}>{props.button}</button>
           </div>
         </div>
       </div>

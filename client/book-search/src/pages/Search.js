@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import SearchForm from "../components/SearchForm";
 import API from "../utils/API";
-import List from "../components/List"
+import List from "../components/SearchList"
 
 
 class Search extends Component {
@@ -9,7 +9,7 @@ class Search extends Component {
     query: "",
     books: [],
     error: "",
-    clicked: false
+    button: "Save"
   };
 
   handleInputChange = event => {
@@ -18,9 +18,6 @@ class Search extends Component {
 
   handleSubmit = event => {
     event.preventDefault();
-    if (this.state.clicked === false){
-      this.setState({clicked: true});
-    }
     API.searchBooks(this.state.query)
       .then(res => {
         if (res.data.items === "error") {
@@ -53,13 +50,13 @@ class Search extends Component {
     return(
       <div>
         <SearchForm
-        clicked={this.state.clicked}
         handleInputChange={this.handleInputChange}
         handleSubmit={this.handleSubmit}
         />
         <List
         books={this.state.books}
         handleSave={this.handleSave}
+        button={this.state.button}
         />
       </div>
     ) 
