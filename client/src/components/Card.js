@@ -12,8 +12,8 @@ function Card(props) {
             <h5 className="card-title">{props.title}</h5>
             <p className="card-text"><small className="text-muted">By {props.authors}</small></p>
             <p className="card-text">{props.about}</p>
-            <a href={props.link} className="d-inline card-link"><small className="text-muted">See on Google Books</small></a>
-            <button className="btn btn-info save-btn" value={props.book} onClick={(event) => props.handleBtn}>{props.button}</button>
+            <button className="btn btn-info" value={props.index} onClick={props.handleBtn}>{props.button}</button>
+            <a href={props.link} className="d-inline card-link"><small className="text-muted">     See on Google Books</small></a>
           </div>
         </div>
       </div>

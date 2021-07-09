@@ -41,7 +41,9 @@ class Search extends Component {
 
   handleSave = event => {
     event.preventDefault();
-    API.saveBook(event.target.value)
+    let bookIndex = event.target.value
+    console.log(this.state.books[bookIndex])
+    API.saveBook(this.state.books[bookIndex])
       .then(event.target.classList.add("disabled"))
       .catch(err => console.log(err))    
   }

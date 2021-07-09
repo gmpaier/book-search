@@ -1,21 +1,22 @@
 import React from "react";
 import Card from "./Card"
 
-function SearchList(props) {
+function SaveList(props) {
   return (props.books.length === 0) ? (
-    <h3>No Books Found</h3>
+    <h4>No Saved Books</h4>
   ) : 
   ( <ul>
-    {props.books.map((book) => {
+    {props.books.map((book, index) => {
       return(
         <li>
           <Card
+            index = {index}
             title = {book.title}
             authors = {book.authors}
             about = {book.about}
             image = {book.image}
             link = {book.link}
-            handleBtn = {props.handleSave}
+            handleBtn = {props.handleDelete}
             button = {props.button}
           />
         </li>
@@ -25,4 +26,4 @@ function SearchList(props) {
   )
 }
 
-export default SearchList;
+export default SaveList;
