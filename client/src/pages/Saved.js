@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import API from "../utils/API";
-import List from "../components/SearchList"
+import List from "../components/SaveList"
 
 class Saved extends Component {
   state = {
@@ -10,7 +10,10 @@ class Saved extends Component {
 
   componentDidMount() {
     API.getBooks()
-        .then(res => this.setState({ books: res.data }))
+        .then(res => {
+          console.log(res);
+          this.setState({ books: res.data })
+        })
         .catch(err => console.log(err))
   }
 

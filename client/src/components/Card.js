@@ -2,7 +2,7 @@ import React from "react";
 
 function Card(props) {
   return(
-    <div className="card mb-3" style={{"max-width": "540px"}}>
+    <div className="card mb-3" style={{"maxWidth": "540px"}}>
       <div className="row g-0">
         <div className="col-md-4">
           <img src={props.image} className="img-fluid rounded-start"/>
@@ -13,7 +13,7 @@ function Card(props) {
             <p className="card-text"><small className="text-muted">By {props.authors}</small></p>
             <p className="card-text">{props.about}</p>
             <button className="btn btn-info" value={props.index} onClick={props.handleBtn}>{props.button}</button>
-            <a href={props.link} className="d-inline card-link"><small className="text-muted">     See on Google Books</small></a>
+            <a href={props.link} className="d-inline card-link float-right"><small className="text-muted">See on Google Books</small></a>
           </div>
         </div>
       </div>

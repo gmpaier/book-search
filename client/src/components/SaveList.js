@@ -6,11 +6,11 @@ function SaveList(props) {
     <h4>No Saved Books</h4>
   ) : 
   ( <ul>
-    {props.books.map((book, index) => {
+    {props.books.map((book) => {
       return(
         <li>
           <Card
-            index = {index}
+            index = {book._id}
             title = {book.title}
             authors = {book.authors}
             about = {book.about}
