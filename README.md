@@ -17,7 +17,9 @@ Run npm i in the main directory.
 
 ## Usage
 
-Run npm start in the main directory to run this application locally, or use the deployed link.
+Run npm start in the main directory to run this application locally, or use the deployed link:
+
+[Deployment](https://shielded-lake-25539.herokuapp.com/)
 
 ## License
 
